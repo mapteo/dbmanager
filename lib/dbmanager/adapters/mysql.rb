@@ -28,7 +28,7 @@ module Dbmanager
         end
 
         def dump_command
-          "mysqldump #{ignoretables} #{params(source)} > '#{filename}'"
+          "mysqldump #{ignoretables} --set-gtid-purged=OFF #{params(source)} > '#{filename}'"
         end
 
         def ignoretables
